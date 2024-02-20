@@ -1,0 +1,29 @@
+[package]
+name = "key_board_4_4_rtic"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cortex-m = "0.7.7"
+cortex-m-rt = { version = "0.7.3", features = ["device"]}
+stm32f1xx-hal = { version = "0.10.0", features = ["rt", "stm32f103", "medium"]}
+rtt-target = { version = "^0.3.1", features = ["cortex-m"]}
+# panic-rtt-target = "0.1.3"
+panic-halt = "0.2.0"
+nb = "1.1.0"
+# unwrap-infallible = "0.1.5"
+cortex-m-rtic = "1.1.4"
+systick-monotonic = "1.0.1"
+rtic-monotonics = "1.5.0"
+
+[[bin]]
+name = "key_board_4_4_rtic"
+test = false
+bench = false
+
+[profile.release]
+codegen-units = 1 # better optimizations
+debug = true # symbols are nice and they don't increase the size on Flash
+lto = true # better optimizations

@@ -1,0 +1,6 @@
+[target.thumbv7m-none-eabi]
+runner = "probe-rs run --chip STM32F103C8"
+
+
+[build]
+target = "thumbv7m-none-eabi"        # Cortex-M3
